@@ -1,0 +1,45 @@
+launch instance console
+
+install git on Ec2 instance in console:
+sudo yum install git -y
+
+Create a Directory to use a working directroy for git
+mkdir project
+
+and navigate to newly created directory;
+cd project
+
+here initalise git using below command
+git init
+
+now create a file using echo command with some sample text
+echo "sample file" >> sample.txt
+
+move the file to satging area using
+git add sample.txt
+
+commit the file to local repo using and accept the message if any shown
+git commit -m "first commit"
+
+confirm using the command that files are commted to local git repo
+git ls-files
+
+configure remote repo using (replace the URL in the below command using your own remote repo)
+git remote add origin <<https://github.com/polams77/learning.git>>
+
+
+push local repo to remote repo using following command
+git push -u origin main
+
+and go to https://github.com/polams77/learning.git and confirm the committed files are shown.
+
+
+to understand the difference between add, commit commands
+in the working directory create a new file using touch, vim or any command
+>>touch git-configure-commands.txt
+
+and then do follwoing command in git 
+>>git ls-files --newly created file will not be shown
+
+now use the follwoing command to add the newly created file to git staging area
+>>git add git-configure-commands.txt
